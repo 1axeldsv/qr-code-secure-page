@@ -47,7 +47,7 @@
 
     <script>
         var correctCode = "11/09/2019";
-        var hintsDisplayed = false;
+        var attempts = 0;
 
         document.getElementById('codeForm').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -55,17 +55,19 @@
             if (codeSaisi === correctCode) {
                 window.location.href = 'page_image.html'; // Redirection vers la deuxième page si le code est correct
             } else {
-                if (!hintsDisplayed) {
-                    displayHints();
-                    hintsDisplayed = true;
+                attempts++;
+                if (attempts === 1) {
+                    displayHint("Indice: 2 tours");
+                } else if (attempts === 2) {
+                    displayHint("Indice: Format XX/XX/XXXX");
                 }
                 alert("Mauvais code, essaye encore");
             }
         });
 
-        function displayHints() {
+        function displayHint(hintText) {
             var hintsDiv = document.getElementById('hints');
-            hintsDiv.textContent = "Indice: 2 tours";
+            hintsDiv.textContent = hintText;
         }
     </script>
 </body>
