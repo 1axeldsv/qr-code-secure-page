@@ -5,11 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demande de code secret</title>
     <style>
-        /* Votre style CSS ici */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding-top: 50px;
+            margin: 0;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            margin-top: 10px;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #hints {
+            margin-top: 20px;
+            color: #d9534f;
+            font-style: italic;
+            font-size: 16px;
+        }
+        #container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #heart {
+            width: 100px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div id="container">
+        <img id="heart" src="https://emojicdn.elk.sh/❤️" alt="Coeur">
+        <h1>Bravo d'être arrivée jusqu'ici</h1>
+        <h2>Entre le code secret :</h2>
+        <form id="codeForm">
+            <input type="text" id="codeInput" placeholder="Entre le code secret">
+            <button type="submit">Valider</button>
+        </form>
+        <div id="hints"></div>
         <!-- Votre contenu HTML ici -->
     </div>
 
@@ -25,8 +82,10 @@
                 window.location.href = 'page_image.html'; // Redirection vers la deuxième page si le code est correct
             } else {
                 attempts++;
-                if (attempts <= hints.length) {
-                    displayHint(hints[attempts - 1]);
+                if (attempts === 1) {
+                    displayHint("Indice: 2 tours");
+                } else if (attempts === 2) {
+                    displayHint("Indice: Format XX/XX/XXXX");
                 }
                 alert("Mauvais code, essaye encore");
             }
