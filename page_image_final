@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding-top: 50px;
+            margin: 0;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        #container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>En route !</h1>
+        <p>Rendez-vous gare du nord pour prendre le train de 16h34, c'est parti ne soit pas en retard, tu trouveras ton billet en dessous. Arrête toi à la station "Pont-Saint-Maxence</p>
+        <img src="internet kid.gif" alt="internet_kid">
+        
+    </div>
+</body>
+</html>
